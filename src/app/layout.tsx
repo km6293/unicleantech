@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import style from "./layout.module.css";
 import "./globals.css";
+import Link from "next/link";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const pretendard = localFont({
+  src: "../fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-pretendard",
 });
 
 export const metadata: Metadata = {
@@ -24,9 +22,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="kr">
+      <body className={`${pretendard.variable}`}>
+        <header className={style.header} role="banner">
+          <div className={style.logo}>
+            <Link href={"/"}>유니클린텍</Link>
+          </div>
+          <nav>
+            <Link href={"/about"}> 청소</Link>
+            <Link href={"/about"}> 새집증후군</Link>
+          </nav>
+        </header>
         {children}
+        <footer>footer</footer>
       </body>
     </html>
   );
