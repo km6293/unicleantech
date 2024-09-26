@@ -1,0 +1,16 @@
+.footer {
+  padding: 3rem 1.5rem;
+  background-color: var(--color-background);
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--color-muted);
+  font-size: var(--font-size-small);
+}
+
+.footer hr {
+  margin: 4rem 0;
+}
+
+.footer address {
+  font-style: normal;
+}
