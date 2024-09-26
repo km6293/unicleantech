@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import style from "./layout.module.css";
+import "./reset.css";
 import "./globals.css";
-import Link from "next/link";
+import { Footer, Header } from "./_component";
 
 const pretendard = localFont({
   src: "../fonts/PretendardVariable.woff2",
@@ -24,34 +24,9 @@ export default function RootLayout({
   return (
     <html lang="kr">
       <body className={`${pretendard.variable}`}>
-        <header className={style.header} role="banner">
-          <div className={style.logo}>
-            <Link href={"/"}>유니클린텍</Link>
-          </div>
-          <nav>
-            <Link href={"/about"}> 청소</Link>
-            <Link href={"/about"}> 새집증후군</Link>
-          </nav>
-        </header>
+        <Header />
         {children}
-
-        <video
-          width="640"
-          height="360"
-          autoPlay
-          muted
-          loop
-          preload="auto"
-          style={{ marginTop: "20px", display: "block", pointerEvents: "none" }}
-        >
-          <source
-            src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-
-        <footer>footer</footer>
+        <Footer />
       </body>
     </html>
   );
