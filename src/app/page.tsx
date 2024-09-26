@@ -1,7 +1,7 @@
 export default function page() {
   return (
     <>
-      {/* <video
+      <video
         width="100%"
         height="100%"
         autoPlay
@@ -12,7 +12,7 @@ export default function page() {
       >
         <source src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} type="video/mp4" />
         Your browser does not support the video tag.
-      </video> */}
+      </video>
     </>
   );
 }
