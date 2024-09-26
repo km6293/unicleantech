@@ -1,0 +1,35 @@
+.header {
+  position: fixed;
+  z-index: 0;
+  background-color: var(--color-background);
+  width: 100vw;
+  display: flex;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow-light);
+  box-sizing: border-box;
+  align-items: center;
+  top: 0;
+  height: 8rem;
+}
+
+.header a {
+  color: inherit;
+}
+
+.logo {
+  font-size: var(--font-size-large);
+}
+
+.header nav {
+  font-weight: 500;
+  font-size: var(--font-size-large);
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+  margin-right: 5rem;
+}
+
+.header > nav > a {
+  padding: 0 5rem;
+}
