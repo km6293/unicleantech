@@ -34,6 +34,23 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
+
+        <video
+          width="640"
+          height="360"
+          autoPlay
+          muted
+          loop
+          preload="auto"
+          style={{ marginTop: "20px", display: "block", pointerEvents: "none" }}
+        >
+          <source
+            src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+
         <footer>footer</footer>
       </body>
     </html>
