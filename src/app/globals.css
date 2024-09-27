@@ -5,7 +5,6 @@ html {
 body {
   font-family: var(--font-pretendard);
   font-size: var(--font-size-base);
-  margin-top: 8rem;
 }
 
 a {
@@ -14,6 +13,8 @@ a {
 
 :root {
   /* font-size */
+  --font-size-xxxlarge: 5rem;
+  --font-size-xxlarge: 3.2rem;
   --font-size-xlarge: 2.4rem;
   --font-size-large: 2rem;
   --font-size-base: 1.6rem;
@@ -53,9 +54,9 @@ a {
   --box-shadow-medium: 0 8px 12px rgba(0, 0, 0, 0.2);
 
   /* line-height */
-  --line-height-base: 1.5;
-  --line-height-tight: 1.2;
-  --line-height-loose: 1.8;
+  --line-height-base: 2;
+  --line-height-tight: 1.6;
+  --line-height-loose: 2.4;
 
   /* border-radius */
   --border-radius-small: 4px;
