@@ -1,0 +1,45 @@
+.introContainer {
+  display: flex;
+  padding: 0 30rem;
+}
+
+.introLeft {
+  width: 40%;
+  position: sticky;
+  height: fit-content;
+  top: 8rem;
+  flex: 1;
+}
+
+.introLeft p {
+  font-size: var(--font-size-xxlarge);
+  font-weight: 700;
+  line-height: var(--line-height-base);
+}
+
+.introRight {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.introDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.introRight h2 {
+  font-size: var(--font-size-xlarge);
+  line-height: var(--line-height-loose);
+  font-weight: 700;
+}
+
+.introRight h3 {
+  line-height: 1.5;
+}
+
+.introRight a {
+  width: fit-content;
+}
