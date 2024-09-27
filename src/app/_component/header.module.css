@@ -7,6 +7,7 @@
   box-sizing: border-box;
   align-items: center;
   top: 0;
+  left: 0;
   height: 8rem;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
