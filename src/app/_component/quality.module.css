@@ -1,0 +1,87 @@
+.imageBackground {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-image: url("/clean.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  overflow: hidden;
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 1;
+  padding: 0 30rem;
+  color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 10rem 0;
+}
+
+.content video {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.content div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  flex-grow: 1;
+  gap: 4rem;
+  text-align: right;
+}
+
+.content:nth-child(1) div,
+.content:nth-child(3) div {
+  align-items: end;
+  text-align: end;
+}
+
+.content:nth-child(2) div {
+  align-items: start;
+  text-align: start;
+}
+
+.content h2 {
+  font-weight: 700;
+  font-size: var(--font-size-xlarge);
+}
+
+.content h3 {
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: var(--font-size-xxlarge);
+}
+
+.content p {
+  line-height: 3;
+}
+
+.content button {
+  border-radius: 80px;
+  padding: 15px 30px;
+  background-color: #ffffff00;
+  width: fit-content;
+  font-weight: 700;
+  color: var(--color-border);
+  font-size: 2rem;
+  border: 2px solid var(--color-border);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.content button:hover {
+  background-color: white;
+  color: var(--color-secondary);
+}
