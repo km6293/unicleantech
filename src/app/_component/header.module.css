@@ -1,16 +1,25 @@
 .header {
   position: fixed;
-  z-index: 0;
-  background-color: var(--color-background);
+  z-index: 10;
   width: 100vw;
   display: flex;
   padding: 1rem 2rem;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--box-shadow-light);
   box-sizing: border-box;
   align-items: center;
   top: 0;
   height: 8rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+  color: var(--color-background);
+}
+
+.scrolled {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow-light);
+  color: var(--color-text);
+  transform: translateY(0);
 }
 
 .header a {
