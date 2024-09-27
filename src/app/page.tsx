@@ -1,23 +1,16 @@
-"use client";
-
 import style from "./page.module.css";
-// import Video from "next-video";
-import Video from "next-video";
-// import getStarted from "/videos/video.mp4";
 
 export default function page() {
   return (
     <main>
       <section className={style.videoContainer}>
-        {/* <video className={style.video} autoPlay muted loop preload="auto">
+        <video className={style.video} autoPlay muted loop preload="auto">
           <source
-            // src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
-            src={"/public/videos/video.mp4"}
+            src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video> */}
-        <Video src={"/videos/video.mp4"} />
+        </video>
 
         <article className={style.videoDetail}>
           <p>Super Clean - Master</p>

@@ -1,5 +1,6 @@
 .videoContainer {
   position: relative;
+  overflow: hidden;
 }
 
 .video {
@@ -13,6 +14,7 @@
 .videoDetail {
   position: absolute;
   top: 30%;
+  left: 5%;
   color: var(--color-background);
 
   display: flex;
