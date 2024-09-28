@@ -25,13 +25,18 @@
 
 .header a {
   color: inherit;
+  height: 100%;
+  align-content: center;
 }
 
 .logo {
+  height: 100%;
   font-size: var(--font-size-large);
+  align-content: center;
 }
 
 .header nav {
+  height: 100%;
   font-weight: 500;
   font-size: var(--font-size-large);
   flex: 1;

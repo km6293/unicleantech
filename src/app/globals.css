@@ -11,6 +11,11 @@ body {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +39,8 @@ a {
 
 :root {
   /* font-size */
-  --font-size-xxxlarge: 5rem;
+  --font-size-xxxxlarge: 5rem;
+  --font-size-xxxlarge: 4rem;
   --font-size-xxlarge: 3.2rem;
   --font-size-xlarge: 2.4rem;
   --font-size-large: 2rem;

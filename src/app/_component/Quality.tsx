@@ -2,9 +2,9 @@ import style from "./quality.module.css";
 
 export default function Quality() {
   return (
-    <div className={style.imageBackground}>
-      <article className={style.contentContainer}>
-        <div className={style.content}>
+    <section className={style.imageBackground}>
+      <div className={style.contentContainer}>
+        <article className={style.content}>
           <video autoPlay muted loop preload="auto">
             <source
               src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
@@ -28,8 +28,8 @@ export default function Quality() {
             </p>
             <button>실제 가격을 확인해 보세요!</button>
           </div>
-        </div>
-        <div className={style.content}>
+        </article>
+        <article className={style.content}>
           <div>
             <h2>The highest quality</h2>
             <h3>
@@ -53,8 +53,8 @@ export default function Quality() {
             />
             Your browser does not support the video tag.
           </video>
-        </div>
-        <div className={style.content}>
+        </article>
+        <article className={style.content}>
           <video autoPlay muted loop preload="auto">
             <source
               src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
@@ -78,8 +78,8 @@ export default function Quality() {
             </p>
             <button>실제 가격을 확인해 보세요!</button>
           </div>
-        </div>
-      </article>
-    </div>
+        </article>
+      </div>
+    </section>
   );
 }

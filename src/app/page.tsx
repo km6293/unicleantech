@@ -1,5 +1,13 @@
 import style from "./page.module.css";
-import { BackgroundVideo, Intro, Quality } from "./_component";
+import {
+  BackgroundVideo,
+  Intro,
+  Quality,
+  Offer,
+  Client,
+  Work,
+  Contact,
+} from "./_component";
 
 export default function page() {
   return (
@@ -7,6 +15,10 @@ export default function page() {
       <BackgroundVideo />
       <Intro />
       <Quality />
+      <Offer />
+      <Client />
+      <Work />
+      <Contact />
     </main>
   );
 }
