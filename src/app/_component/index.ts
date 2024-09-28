@@ -7,6 +7,7 @@ import Offer from "./Offer";
 import Client from "./Client";
 import Work from "./Work";
 import Contact from "./Contact";
+import Floating from "./Floating";
 
 export {
   Footer,
@@ -18,4 +19,5 @@ export {
   Client,
   Work,
   Contact,
+  Floating,
 };

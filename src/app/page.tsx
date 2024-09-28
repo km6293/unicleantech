@@ -7,6 +7,7 @@ import {
   Client,
   Work,
   Contact,
+  Floating,
 } from "./_component";
 
 export default function page() {
@@ -19,6 +20,7 @@ export default function page() {
       <Client />
       <Work />
       <Contact />
+      <Floating />
     </main>
   );
 }
