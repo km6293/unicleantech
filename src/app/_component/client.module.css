@@ -1,0 +1,22 @@
+.clientContainer {
+  padding: 0 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  line-height: 2;
+  background-color: var(--color-background);
+}
+
+.clientContainer h2 {
+  font-weight: 700;
+  font-size: var(--font-size-xxxlarge);
+}
+
+.clientContainer h3 {
+  font-weight: 700;
+  font-size: var(--font-size-xlarge);
+}
+
+.clientContainer p {
+  line-height: 2;
+}
