@@ -21,9 +21,9 @@ export default function Header() {
       className={`${style.header} ${isScrolled ? style.scrolled : ""}`}
       role="banner"
     >
-      <div className={style.logo}>
-        <Link href={"/"}>유니클린텍</Link>
-      </div>
+      <Link className={style.logo} href={"/"}>
+        유니클린텍
+      </Link>
       <nav>
         <Link href={"/"}> 청소</Link>
         <Link href={"/"}> 새집증후군</Link>
