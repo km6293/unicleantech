@@ -46,5 +46,41 @@
 }
 
 .header > nav > a {
+  color: var(--color-primary);
   padding: 0 5rem;
+}
+
+.header > nav > a:hover {
+  background-color: var(--color-muted);
+  border-radius: var(--border-radius-small);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    top: 0;
+    top: auto;
+    height: 5rem;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: var(--box-shadow-light);
+  }
+
+  .header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .header > nav > a {
+    flex: 1;
+    text-align: center;
+    font-size: var(--font-size-base);
+    padding: 0.5rem 0;
+    color: var(--color-primary);
+  }
 }

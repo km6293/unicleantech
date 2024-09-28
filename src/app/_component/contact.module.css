@@ -44,16 +44,22 @@
 .contactPlaceholder div {
   display: flex;
   gap: 5rem;
+  width: 100%;
+  justify-content: center;
 }
 .contactPlaceholder button {
   border-radius: 20px;
   border: 1px solid white;
   background-color: #ffffff29;
   font-weight: 700;
-  padding: 2rem 5rem;
   color: white;
   transition: transform 0.3s ease, background-color 0.3s ease,
     border-color 0.3s ease;
+  padding: 1rem 2rem;
+}
+
+.contactPlaceholder p {
+  padding: 0 10%;
 }
 
 .contactPlaceholder button:hover {

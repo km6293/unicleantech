@@ -89,4 +89,8 @@ button {
   --border-radius-small: 4px;
   --border-radius-base: 8px;
   --border-radius-large: 16px;
+
+  /* screen */
+  --screen-medium: 768px;
+  --screen-small: 480px;
 }

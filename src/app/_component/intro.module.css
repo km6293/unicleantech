@@ -1,6 +1,6 @@
 .introContainer {
   display: flex;
-  padding: 0 30rem;
+  padding: 0 10%;
 }
 
 .introLeft {
@@ -42,4 +42,20 @@
 
 .introRight a {
   width: fit-content;
+}
+
+@media screen and (max-width: 768px) {
+  .introContainer {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .introLeft {
+    width: 100%;
+    position: static;
+  }
+
+  .introRight {
+    width: 100%;
+  }
 }

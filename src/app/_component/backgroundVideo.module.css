@@ -23,7 +23,8 @@
 .videoDetail {
   position: absolute;
   top: 30%;
-  left: 30rem;
+  left: 10%;
+  right: 10%;
   color: var(--color-background);
 
   display: flex;
@@ -43,8 +44,36 @@
 .videoDetail h1 {
   font-size: var(--font-size-xxxxlarge);
   font-weight: 700;
+  line-height: 2;
 }
 
 .videoDetail span {
   font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .videoDetail p {
+    font-size: var(--font-size-large);
+  }
+
+  .videoDetail h3 {
+    font-size: var(--font-size-xlarge);
+  }
+
+  .videoDetail h1 {
+    font-size: var(--font-size-xxxlarge);
+  }
+}
+@media screen and (max-width: 480px) {
+  .videoDetail p {
+    font-size: var(--font-size-base);
+  }
+
+  .videoDetail h3 {
+    font-size: var(--font-size-large);
+  }
+
+  .videoDetail h1 {
+    font-size: var(--font-size-xxlarge);
+  }
 }
