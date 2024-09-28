@@ -1,0 +1,42 @@
+.opperContainer {
+  padding: 0 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  line-height: 2;
+}
+
+.opperContainer > h2 {
+  font-weight: 700;
+  font-size: var(--font-size-xxxlarge);
+}
+
+.opperContainer > h3 {
+  font-weight: 700;
+  font-size: var(--font-size-xlarge);
+}
+
+.opperContainer > p {
+  line-height: 2;
+}
+
+.opperContainer div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.opperContainer article {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.opperContainer article h2 {
+  font-weight: 700;
+  font-size: var(--font-size-large);
+}
+.opperContainer article p {
+  font-weight: 500;
+  color: var(--color-muted);
+}
