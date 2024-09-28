@@ -5,7 +5,14 @@ export default function page() {
     <>
       <div className={style.videoPlaceholder}></div>
       <section className={style.videoContainer}>
-        <video className={style.video} autoPlay muted loop preload="auto">
+        <video
+          className={style.video}
+          autoPlay
+          muted
+          loop
+          preload="auto"
+          playsInline
+        >
           <source
             src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
             type="video/mp4"
