@@ -44,13 +44,12 @@
   text-align: right;
 }
 
-.content:nth-child(1) div,
-.content:nth-child(3) div {
+.content:nth-child(odd) div {
   align-items: end;
   text-align: end;
 }
 
-.content:nth-child(2) div {
+.content:nth-child(even) div {
   align-items: start;
   text-align: start;
 }
