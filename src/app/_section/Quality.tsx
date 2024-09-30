@@ -1,3 +1,4 @@
+import { Video } from "../_component";
 import style from "./quality.module.css";
 
 export default function Quality() {
@@ -5,13 +6,7 @@ export default function Quality() {
     <section className={style.imageBackground}>
       <div className={style.contentContainer}>
         <article className={style.content}>
-          <video autoPlay muted loop preload="auto">
-            <source
-              src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <Video src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
           <div>
             <h2>The highest quality</h2>
             <h3>바닥청소기 하나에 700만원, 비싼 장비에는 다 이유가 있어요.</h3>
@@ -36,22 +31,10 @@ export default function Quality() {
             </p>
             <button>실제 가격을 확인해 보세요!</button>
           </div>
-          <video autoPlay muted loop preload="auto">
-            <source
-              src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <Video src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
         </article>
         <article className={style.content}>
-          <video autoPlay muted loop preload="auto">
-            <source
-              src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <Video src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
           <div>
             <h2>The highest quality</h2>
             <h3>바닥청소기 하나에 700만원, 비싼 장비에는 다 이유가 있어요.</h3>

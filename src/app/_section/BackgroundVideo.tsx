@@ -1,3 +1,4 @@
+import { Video } from "../_component";
 import style from "./backgroundVideo.module.css";
 
 export default function page() {
@@ -5,20 +6,7 @@ export default function page() {
     <>
       <div className={style.videoPlaceholder}></div>
       <section className={style.videoContainer}>
-        <video
-          className={style.video}
-          autoPlay
-          muted
-          loop
-          preload="auto"
-          playsInline
-        >
-          <source
-            src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+        <Video src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
 
         <article className={style.videoDetail}>
           <p>Super Clean - Master</p>

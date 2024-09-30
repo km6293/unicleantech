@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./reset.css";
 import "./globals.css";
-import { Footer, Header } from "./_component";
+import { Footer, Header } from "./_section";
 
 const pretendard = localFont({
   src: "../fonts/PretendardVariable.woff2",

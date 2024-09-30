@@ -8,7 +8,7 @@ import {
   Work,
   Contact,
   Floating,
-} from "./_component";
+} from "./_section";
 
 export default function page() {
   return (

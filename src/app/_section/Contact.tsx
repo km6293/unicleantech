@@ -1,3 +1,4 @@
+import { Video } from "../_component";
 import style from "./contact.module.css";
 
 export default function Contact() {
@@ -15,13 +16,7 @@ export default function Contact() {
         </div>
       </div>
       <div className={style.contactContainer}>
-        <video className={style.video} autoPlay muted loop preload="auto">
-          <source
-            src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`}
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+        <Video src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
       </div>
     </section>
   );
