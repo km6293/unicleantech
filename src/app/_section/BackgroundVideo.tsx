@@ -10,14 +10,14 @@ export default function page() {
 
         <article className={style.videoDetail}>
           <p>Super Clean - Master</p>
-          <div>
+          <span>
             <h3>
-              <span>13년간 13,000건</span>의 청소 경력
+              <b>13년간 13,000건</b>의 청소 경력
             </h3>
             <h3>
-              <span>총합 1500만원 이상</span>의 전문 장비 사용
+              <b>총합 1500만원 이상</b>의 전문 장비 사용
             </h3>
-          </div>
+          </span>
           <h1>축하드립니다, 청소업체 비교할 시간을 아끼셨네요</h1>
         </article>
       </section>
