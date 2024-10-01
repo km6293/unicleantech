@@ -34,13 +34,10 @@
   flex-direction: column;
   padding: 20% 5%;
   gap: 4rem;
-  background-image: url("/clean.jpg");
-  background-size: cover;
   background-position: center;
-  color: white;
-  border-radius: 20px;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .workContainer article::before {
@@ -52,10 +49,15 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  border-radius: 20px;
 }
 
-.workContainer article * {
+.workContainer img {
+  border-radius: 20px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.workContainer article *:not(img) {
   position: relative;
   z-index: 2;
   color: white;

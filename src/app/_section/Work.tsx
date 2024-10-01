@@ -1,4 +1,5 @@
 import style from "./work.module.css";
+import Image from "next/image";
 
 export default function Work() {
   const DATA = [
@@ -23,6 +24,7 @@ export default function Work() {
       <div>
         {DATA.map((item, index) => (
           <article key={index}>
+            <Image src="/clean.jpg" alt={item.title} fill />
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             <button>{item.buttonText}</button>
