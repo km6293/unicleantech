@@ -7,8 +7,9 @@ import {
   Client,
   Work,
   Contact,
-  Floating,
+  // Floating,
 } from "./_section";
+import ChannelTalk from "@/components/ChannelTalk";
 
 export default function page() {
   return (
@@ -20,7 +21,8 @@ export default function page() {
       <Client />
       <Work />
       <Contact />
-      <Floating />
+      {/* <Floating /> */}
+      <ChannelTalk />
     </main>
   );
 }
