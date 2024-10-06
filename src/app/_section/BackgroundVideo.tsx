@@ -9,16 +9,15 @@ export default function page() {
         <Video src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
 
         <article className={style.videoDetail}>
-          <p>Super Clean - Master</p>
+          <p>&ldquo;유니클린텍은 청소업체들을 굉장히 싫어합니다.&ldquo;</p>
           <span>
-            <h3>
-              <b>13년간 13,000건</b>의 청소 경력
-            </h3>
-            <h3>
-              <b>총합 1500만원 이상</b>의 전문 장비 사용
-            </h3>
+            <h3>세정력만 강한 독성 화공약품..</h3>
+            <h3>머리속엔 청소비용과 추가요금 생각 뿐..</h3>
           </span>
-          <h1>축하드립니다, 청소업체 비교할 시간을 아끼셨네요</h1>
+          <span>
+            <h1>유니클린텍은 왜 다를까요?</h1>
+            <h1>정확히 3분이면 확인 가능 합니다.</h1>
+          </span>
         </article>
       </section>
     </>
