@@ -3,17 +3,15 @@
   z-index: 10;
   width: 100vw;
   display: flex;
-  padding: 1rem 2rem;
   box-sizing: border-box;
   align-items: center;
   top: 0;
   left: 0;
-  height: 8rem;
+  height: 10rem;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  transform: translateY(-100%);
   color: var(--color-background);
-  gap: 2rem;
+  padding: 0 10%;
 }
 
 .scrolled {
@@ -21,67 +19,88 @@
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--box-shadow-light);
   color: var(--color-text);
-  transform: translateY(0);
 }
 
-.header a {
+.header button {
   color: inherit;
+  padding: 0 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
-  align-content: center;
 }
 
 .logo {
-  height: 100%;
-  font-size: var(--font-size-large);
-  align-content: center;
+  height: 10rem;
+  width: 15rem;
+}
+
+.menu {
+  display: none;
 }
 
 .header nav {
   height: 100%;
-  font-weight: 500;
-  font-size: var(--font-size-large);
+  font-weight: 600;
   flex: 1;
   justify-content: flex-end;
   display: flex;
-  margin-right: 5rem;
-  gap: 1rem;
+  width: 100%;
+  align-items: center;
 }
 
-.header > nav > a {
-  color: var(--color-primary);
-  padding: 0 5rem;
+.mobileBackground {
+  display: none;
+  top: 7rem;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-background);
+  z-index: 3;
 }
 
-.header > nav > a:hover {
-  background-color: var(--color-muted);
-  border-radius: var(--border-radius-small);
-  color: white;
+.mobileBackground.open {
+  display: none;
 }
 
-@media (max-width: 768px) {
-  .header {
-    position: fixed;
-    top: 0;
-    height: auto;
+.mobileBackground li {
+  padding: 2rem 3rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mobileBackground button {
+  color: black;
+}
+
+@media screen and (max-width: 1024px) {
+  .header.open {
     background-color: var(--color-background);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: var(--box-shadow-light);
   }
 
-  .header nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-right: 0;
+  .mobileBackground {
+    display: none;
   }
 
-  .header > nav > a {
-    flex: 1;
-    text-align: center;
-    font-size: var(--font-size-base);
-    padding: 1.5rem 0;
-    color: var(--color-primary);
+  .mobileBackground.open {
+    display: block;
+  }
+
+  .header {
+    padding: 0 5%;
+    height: 7rem;
+    transition: none;
+  }
+
+  .header nav button {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .logo {
+    height: 10rem;
+    width: 10rem;
   }
 }
