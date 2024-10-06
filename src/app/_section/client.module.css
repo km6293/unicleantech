@@ -20,3 +20,9 @@
 .clientContainer p {
   line-height: 2;
 }
+
+@media screen and (max-width: 1024px) {
+  .clientContainer {
+    padding: 0 5%;
+  }
+}

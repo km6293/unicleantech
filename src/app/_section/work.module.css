@@ -22,11 +22,6 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-@media screen and (max-width: 480px) {
-  .workContainer > div {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 
 .workContainer article {
   position: relative;
@@ -81,4 +76,16 @@
   background-color: white;
   color: var(--color-secondary);
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .workContainer {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .workContainer > div {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

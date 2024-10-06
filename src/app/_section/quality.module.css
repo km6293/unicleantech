@@ -3,10 +3,10 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  background-image: url("/clean.jpg");
+  background-image: url("/clean.webp");
   background-size: cover;
+  background-position: top;
   background-attachment: fixed;
-  background-position: center;
   background-repeat: repeat;
   overflow: hidden;
 }
@@ -87,12 +87,20 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .contentContainer {
+    padding: 0 5%;
+  }
   .content button {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 768px) {
+  .imageBackground {
+    background-image: none;
+    background-color: black;
+  }
+
   .contentContainer article {
     flex-direction: column;
   }

@@ -26,18 +26,6 @@
   gap: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  .opperContainer div {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .opperContainer div {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 .opperContainer article {
   padding: 20px;
   border-radius: 8px;
@@ -51,4 +39,22 @@
 .opperContainer article p {
   font-weight: 500;
   color: var(--color-muted);
+}
+
+@media screen and (max-width: 1024px) {
+  .opperContainer {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .opperContainer div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .opperContainer div {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
