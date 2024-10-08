@@ -1,16 +1,16 @@
 "use client";
 import { useEffect } from "react";
-import ChannelService from "@/utils/ChannelService";
+import channelService from "@/utils/channelService";
 
 const ChannelTalk = () => {
   useEffect(() => {
-    ChannelService.loadScript();
-    ChannelService.boot({
+    channelService.loadScript();
+    channelService.boot({
       pluginKey: process.env.NEXT_PUBLIC_PLUGIN_KEY as string,
     });
 
     return () => {
-      ChannelService.shutdown();
+      channelService.shutdown();
     };
   }, []);
 
