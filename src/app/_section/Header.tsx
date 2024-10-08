@@ -28,7 +28,6 @@ export default function Header() {
   const menuItems = [
     { label: "이건 뭐야?", url: "/" },
     { label: "서비스 소개", url: "/" },
-    { label: "칼럼", url: "/" },
     { label: "채용", url: "/" },
     { label: "문의하기", url: "/" },
   ];
@@ -41,7 +40,7 @@ export default function Header() {
         } `}
       >
         <Image
-          src="/Logo.svg"
+          src={`${isScrolled ? "/logo-black.svg" : "/logo-white.svg"}`}
           alt="logo"
           className={style.logo}
           width={150}
