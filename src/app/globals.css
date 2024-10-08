@@ -7,6 +7,7 @@ body {
   font-family: var(--font-pretendard);
   font-size: var(--font-size-base);
   position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -47,7 +48,7 @@ button {
 
 :root {
   /* font-size */
-  --font-size-xxxxlarge: 5rem;
+  --font-size-xxxxlarge: 4.8rem;
   --font-size-xxxlarge: 4rem;
   --font-size-xxlarge: 3.2rem;
   --font-size-xlarge: 2.4rem;
@@ -101,4 +102,60 @@ button {
   /* screen */
   --screen-medium: 768px;
   --screen-small: 480px;
+}
+
+h1 {
+  font-size: var(--font-size-xxxlarge);
+}
+
+h2 {
+  font-size: var(--font-size-xxlarge);
+}
+
+h3 {
+  font-size: var(--font-size-xlarge);
+  line-height: 2;
+}
+
+p {
+  font-size: var(--font-size-large);
+}
+
+strong {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-xxlarge);
+  }
+
+  h2 {
+    font-size: var(--font-size-xlarge);
+  }
+
+  h3 {
+    font-size: var(--font-size-large);
+  }
+
+  p {
+    font-size: var(--font-size-base);
+  }
+}
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: var(--font-size-large);
+  }
+
+  h2 {
+    font-size: var(--font-size-base);
+  }
+
+  h3 {
+    font-size: var(--font-size-small);
+  }
+
+  p {
+    font-size: var(--font-size-xsmall);
+  }
 }
