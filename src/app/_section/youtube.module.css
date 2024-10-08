@@ -1,0 +1,42 @@
+.youtubeContainer {
+  padding: 10rem 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.youtubeText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.youtubeVideo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  justify-items: center;
+}
+
+.youtubeVideo div {
+  width: 100%;
+  height: 100%;
+}
+.youtubeVideo p {
+  padding: 2rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .youtubeContainer {
+    padding: 10rem 5%;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .youtubeVideo {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+  }
+}

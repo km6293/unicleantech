@@ -1,13 +1,12 @@
 import style from "./page.module.css";
 import {
   BackgroundVideo,
-  Intro,
+  GroupPhoto,
+  Review,
   Quality,
-  Offer,
-  Client,
-  Work,
   Contact,
-  // Floating,
+  Introduce,
+  Youtube,
 } from "./_section";
 import ChannelTalk from "@/components/ChannelTalk";
 
@@ -15,13 +14,12 @@ export default function page() {
   return (
     <main className={style.mainContainer}>
       <BackgroundVideo />
-      <Intro />
+      <GroupPhoto />
+      <Review />
+      <Introduce />
       <Quality />
-      <Offer />
-      <Client />
-      <Work />
+      <Youtube />
       <Contact />
-      {/* <Floating /> */}
       <ChannelTalk />
     </main>
   );

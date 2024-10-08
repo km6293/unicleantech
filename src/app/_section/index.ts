@@ -1,23 +1,21 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import BackgroundVideo from "./BackgroundVideo";
-import Intro from "./Intro";
 import Quality from "./Quality";
-import Offer from "./Offer";
-import Client from "./Client";
-import Work from "./Work";
+import Introduce from "./Introduce";
 import Contact from "./Contact";
-import Floating from "./Floating";
+import GroupPhoto from "./GroupPhoto";
+import Review from "./Review";
+import Youtube from "./Youtube";
 
 export {
   Footer,
   Header,
   BackgroundVideo,
-  Intro,
   Quality,
-  Offer,
-  Client,
-  Work,
+  Introduce,
   Contact,
-  Floating,
+  GroupPhoto,
+  Review,
+  Youtube,
 };

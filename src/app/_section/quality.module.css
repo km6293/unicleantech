@@ -5,7 +5,7 @@
   min-height: 100vh;
   background-image: url("/clean.webp");
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: repeat;
   overflow: hidden;
@@ -56,13 +56,11 @@
 
 .content h2 {
   font-weight: 700;
-  font-size: var(--font-size-xlarge);
 }
 
 .content h3 {
   line-height: 1.5;
   font-weight: 700;
-  font-size: var(--font-size-xxlarge);
 }
 
 .content p {
@@ -109,32 +107,12 @@
     width: 100%;
   }
 
-  .content h2 {
-    font-size: var(--font-size-large);
-  }
-
-  .content h3 {
-    font-size: var(--font-size-xlarge);
-  }
-
   .content p {
     line-height: 2;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .content h2 {
-    font-size: var(--font-size-base);
-  }
-
-  .content h3 {
-    font-size: var(--font-size-large);
-  }
-
-  .content p {
-    font-size: var(--font-size-small);
-  }
-
   .content button {
     padding: 1rem 3rem;
   }
