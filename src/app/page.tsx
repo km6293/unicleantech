@@ -8,7 +8,7 @@ import {
   Introduce,
   Youtube,
 } from "./_section";
-import ChannelTalk from "@/components/channelTalk";
+import ChannelTalk from "@/components/ChannelTalk";
 
 export default function page() {
   return (
