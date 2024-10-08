@@ -26,10 +26,10 @@ export default function Header() {
   }, []);
 
   const menuItems = [
-    { label: "이건 뭐야?", url: "/" },
-    { label: "서비스 소개", url: "/" },
-    { label: "채용", url: "/" },
-    { label: "문의하기", url: "/" },
+    { label: "이건 뭐야?", url: "/about" },
+    { label: "서비스 소개", url: "/services" },
+    { label: "채용", url: "/careers" },
+    { label: "문의하기", url: "/contact" },
   ];
 
   return (
@@ -45,6 +45,7 @@ export default function Header() {
           className={style.logo}
           width={150}
           height={100}
+          onClick={() => move("/")}
         />
         <nav>
           {menuItems.map((item) => (

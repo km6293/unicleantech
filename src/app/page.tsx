@@ -4,11 +4,9 @@ import {
   GroupPhoto,
   Review,
   Quality,
-  Contact,
   Introduce,
   Youtube,
 } from "./_section";
-import ChannelTalk from "@/components/ChannelTalk";
 
 export default function page() {
   return (
@@ -19,8 +17,6 @@ export default function page() {
       <Introduce />
       <Quality />
       <Youtube />
-      <Contact />
-      <ChannelTalk />
     </main>
   );
 }

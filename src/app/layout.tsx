@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./reset.css";
 import "./globals.css";
-import { Footer, Header } from "./_section";
+import { Contact, Footer, Header } from "./_section";
 import { Suspense } from "react";
 import Analytics from "./_component/analytics";
+import ChannelTalk from "@/components/ChannelTalk";
 
 const pretendard = localFont({
   src: "../fonts/PretendardVariable.woff2",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   title: "유니클린텍",
   description: `유니클린텍은 청소전문 업체입니다.`,
   icons: {
-    // icon: '/images/logo.png',
+    icon: "/simbal.svg",
   },
   generator: "Next.js",
   applicationName: "유니클린텍",
@@ -35,14 +36,14 @@ export const metadata: Metadata = {
     description: `유니클린텍은 청소전문 업체입니다.`,
     url: `https://unicleantech.vercel.app/`,
     siteName: "유니클린텍",
-    // images: [
-    //   {
-    //     url: '/images/logo.png',
-    //     width: 800,
-    //     height: 600,
-    //     alt: '유니클린텍 로고',
-    //   },
-    // ],
+    images: [
+      {
+        url: "/simbal.svg",
+        width: 800,
+        height: 600,
+        alt: "유니클린텍 로고",
+      },
+    ],
     locale: "ko_KR",
     type: "website",
   },
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "유니클린텍 - 홈",
     description: `유니클린텍은 청소전문 업체입니다.`,
-    // images: ['/images/logo.png'],
+    images: ["/simbal.svg"],
   },
 };
 
@@ -69,6 +70,8 @@ export default function RootLayout({
       <body className={`${pretendard.variable}`}>
         <Header />
         {children}
+        <Contact />
+        <ChannelTalk />
         <Footer />
       </body>
     </html>
