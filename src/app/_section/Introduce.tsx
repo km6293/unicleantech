@@ -31,7 +31,7 @@ export default function Introduce() {
               width={1160}
               height={900}
             />
-            <p>박찬엽</p>
+            <p>직원</p>
           </div>
         ))}
       </div>

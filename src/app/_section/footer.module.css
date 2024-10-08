@@ -4,7 +4,6 @@
   width: 100%;
   box-sizing: border-box;
   color: var(--color-muted);
-  font-size: var(--font-size-small);
 }
 
 .footer hr {
@@ -13,8 +12,10 @@
 
 .footer address {
   font-style: normal;
+  font-size: var(--font-size-small);
 }
 
 .footer p {
   line-height: var(--line-height-base);
+  font-size: var(--font-size-base);
 }
