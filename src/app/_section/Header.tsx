@@ -3,22 +3,14 @@
 import { useEffect, useState } from "react";
 import style from "./header.module.css";
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
 
   const handleScroll = () => setIsScrolled(window.scrollY > 20);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  // const move = (url: string) => {
-  //   router.push(url);
-  //   setIsMenuOpen(false);
-  // };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -41,19 +33,20 @@ export default function Header() {
           isMenuOpen ? style.open : ""
         } `}
       >
-        <Image
-          src={`${isScrolled ? "/logo-black.svg" : "/logo-white.svg"}`}
-          alt="logo"
-          className={style.logo}
-          width={150}
-          height={100}
-          onClick={() => move("/")}
-        />
+        <Link href="/">
+          <Image
+            src={`${isScrolled ? "/logo-black.svg" : "/logo-white.svg"}`}
+            alt="logo"
+            className={style.logo}
+            width={150}
+            height={100}
+          />
+        </Link>
         <nav>
           {menuItems.map((item) => (
-            <button key={item.label} onClick={() => move(item.url)}>
+            <Link key={item.label} href={item.url}>
               {item.label}
-            </button>
+            </Link>
           ))}
           <Image
             src="/menu.svg"
@@ -71,7 +64,7 @@ export default function Header() {
         <ul>
           {menuItems.map((item) => (
             <Link key={item.label} href={item.url}>
-              {item.label}
+              <li>{item.label}</li>
             </Link>
           ))}
         </ul>
