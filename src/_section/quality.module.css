@@ -1,0 +1,119 @@
+.imageBackground {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-image: url("/group.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  overflow: hidden;
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 1;
+  padding: 0 10%;
+  color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 10rem 0;
+  gap: 5rem;
+}
+
+.content video {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.content div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  flex-grow: 1;
+  gap: 4rem;
+  text-align: right;
+}
+
+.content:nth-child(odd) div {
+  align-items: end;
+  text-align: end;
+}
+
+.content:nth-child(even) div {
+  align-items: start;
+  text-align: start;
+}
+
+.content h2 {
+  font-weight: 700;
+}
+
+.content h3 {
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.content p {
+  line-height: 3;
+}
+
+.content button {
+  border-radius: 80px;
+  padding: 2rem 5rem;
+  background-color: #ffffff00;
+  width: fit-content;
+  font-weight: 700;
+  color: var(--color-border);
+  font-size: 2rem;
+  border: 2px solid var(--color-border);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.content button:hover {
+  background-color: white;
+  color: var(--color-secondary);
+}
+
+@media screen and (max-width: 1024px) {
+  .contentContainer {
+    padding: 0 5%;
+  }
+  .content button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageBackground {
+    background-image: none;
+    background-color: black;
+  }
+
+  .contentContainer article {
+    flex-direction: column;
+  }
+
+  .content video {
+    width: 100%;
+  }
+
+  .content p {
+    line-height: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content button {
+    padding: 1rem 3rem;
+  }
+}
