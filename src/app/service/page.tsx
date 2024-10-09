@@ -1,12 +1,12 @@
+import { Incomparable, Pride, Range } from "./_section";
 import style from "./page.module.css";
-import { AboutTop, Problem, QualityExport } from "./_section";
 
 export default function Page() {
   return (
     <main className={style.mainContainer}>
-      <AboutTop />
-      <Problem />
-      <QualityExport />
+      <Pride />
+      <Range />
+      <Incomparable />
     </main>
   );
 }

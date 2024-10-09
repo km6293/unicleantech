@@ -1,0 +1,41 @@
+.rangeContainer {
+  position: relative;
+  height: 100%;
+  padding: 10rem 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.rangeContainer h2 {
+  text-align: center;
+}
+
+.rangeGride {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.rangeGride article {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.rangeGride div {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 5%;
+}
+
+.rangeGride h2 {
+  text-align: center;
+}
+
+.rangeGride ul {
+  line-height: 1.7;
+  font-size: 1.8rem;
+}

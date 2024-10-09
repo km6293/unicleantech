@@ -1,0 +1,36 @@
+.prideContainer {
+  position: relative;
+  height: 100%;
+  padding: 10rem 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.prideContainer h2 {
+  text-align: center;
+}
+
+.prideGride {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.prideGride article {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.prideGride div {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 5%;
+}
+
+.prideGride h2 {
+  text-align: center;
+}

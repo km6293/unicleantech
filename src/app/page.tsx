@@ -3,7 +3,7 @@ import {
   BackgroundVideo,
   GroupPhoto,
   Review,
-  Quality,
+  QualityExport,
   Introduce,
   Youtube,
 } from "./_section";
@@ -15,7 +15,7 @@ export default function page() {
       <GroupPhoto />
       <Review />
       <Introduce />
-      <Quality />
+      <QualityExport />
       <Youtube />
     </main>
   );

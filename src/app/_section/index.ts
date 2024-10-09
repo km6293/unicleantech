@@ -1,7 +1,7 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import BackgroundVideo from "./BackgroundVideo";
-import Quality from "./Quality";
+import QualityExport from "./QualityExport";
 import Introduce from "./Introduce";
 import Contact from "./Contact";
 import GroupPhoto from "./GroupPhoto";
@@ -12,7 +12,7 @@ export {
   Footer,
   Header,
   BackgroundVideo,
-  Quality,
+  QualityExport,
   Introduce,
   Contact,
   GroupPhoto,
