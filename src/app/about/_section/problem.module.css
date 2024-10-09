@@ -1,0 +1,30 @@
+.problemContainer {
+  height: 100dvh;
+  width: 100%;
+  position: relative;
+}
+
+.problemContainer article {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  right: 10%;
+  color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.problemContainer article span {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .problemContainer article {
+    left: 5%;
+    right: 5%;
+    gap: 3rem;
+  }
+}
