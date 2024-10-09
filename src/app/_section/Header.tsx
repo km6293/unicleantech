@@ -3,20 +3,22 @@
 import { useEffect, useState } from "react";
 import style from "./header.module.css";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleScroll = () => setIsScrolled(window.scrollY > 20);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const move = (url: string) => {
-    router.push(url);
-    setIsMenuOpen(false);
-  };
+  // const move = (url: string) => {
+  //   router.push(url);
+  //   setIsMenuOpen(false);
+  // };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -27,8 +29,8 @@ export default function Header() {
 
   const menuItems = [
     { label: "이건 뭐야?", url: "/about" },
-    { label: "서비스 소개", url: "/services" },
-    { label: "채용", url: "/careers" },
+    { label: "서비스 소개", url: "/service" },
+    { label: "채용", url: "/career" },
     { label: "문의하기", url: "/contact" },
   ];
 
@@ -68,9 +70,9 @@ export default function Header() {
       >
         <ul>
           {menuItems.map((item) => (
-            <li key={item.label} onClick={() => move(item.url)}>
-              <button>{item.label}</button>
-            </li>
+            <Link key={item.label} href={item.url}>
+              {item.label}
+            </Link>
           ))}
         </ul>
       </div>
