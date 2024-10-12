@@ -92,84 +92,87 @@ export default function Inquiry() {
       </h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <h4>이름을 입력해주세요</h4>
-          <input type="text" required />
-        </div>
+          <div>
+            <h4>이름을 입력해주세요</h4>
+            <input type="text" required />
+          </div>
 
-        <div>
-          <h4>연락처를 입력해주세요</h4>
-          <input type="text" required maxLength={15} />
-        </div>
+          <div>
+            <h4>연락처를 입력해주세요</h4>
+            <input type="text" required maxLength={15} />
+          </div>
 
-        <div>
-          <h4>청소 지역 입력 (시/도, 구/군, 동)</h4>
-          <input type="text" required />
-        </div>
+          <div>
+            <h4>청소 지역 입력 (시/도, 구/군, 동)</h4>
+            <input type="text" required />
+          </div>
 
-        <div>
-          <h4>평수, 방, 화장실, 베란다 구조는 어떻게 되실까요?</h4>
-          <input type="text" required />
-        </div>
+          <div>
+            <h4>평수, 방, 화장실, 베란다 구조는 어떻게 되실까요?</h4>
+            <input type="text" required />
+          </div>
 
-        <div>
-          <h4>어떤 서비스를 원하시나요?</h4>
-          <div className={style.checkboxGroup}>
-            {services.map(({ id, label, value }) => (
-              <div key={id} className={style.checkboxItem}>
-                <input
-                  type="checkbox"
-                  id={id}
-                  value={value}
-                  onChange={handleServiceChange}
-                />
-                <label htmlFor={id}>{label}</label>
-                {id === "otherService" && selectedServices.includes("기타") && (
+          <div>
+            <h4>어떤 서비스를 원하시나요?</h4>
+            <div className={style.checkboxGroup}>
+              {services.map(({ id, label, value }) => (
+                <div key={id} className={style.checkboxItem}>
                   <input
-                    type="text"
-                    placeholder="기타 서비스를 입력해주세요"
-                    value={otherService}
-                    onChange={(e) => setOtherService(e.target.value)}
-                    className={style.etcItem}
+                    type="checkbox"
+                    id={id}
+                    value={value}
+                    onChange={handleServiceChange}
+                  />
+                  <label htmlFor={id}>{label}</label>
+                  {id === "otherService" &&
+                    selectedServices.includes("기타") && (
+                      <input
+                        type="text"
+                        placeholder="기타 서비스를 입력해주세요"
+                        value={otherService}
+                        onChange={(e) => setOtherService(e.target.value)}
+                        className={style.etcItem}
+                        required
+                      />
+                    )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4>어떤 건물인가요?</h4>
+            <div className={style.radioGroup}>
+              {buildingTypes.map((type) => (
+                <div key={type} className={style.radioItem}>
+                  <input
+                    type="radio"
+                    id={type}
+                    name="buildingType"
+                    value={type}
+                    onChange={handleBuildingChange}
                     required
                   />
-                )}
-              </div>
-            ))}
+                  <label htmlFor={type}>{type}</label>
+                  {type === "기타" && buildingType === "기타" && (
+                    <input
+                      type="text"
+                      placeholder="기타 건물 유형을 입력해주세요"
+                      value={otherBuilding}
+                      onChange={(e) => setOtherBuilding(e.target.value)}
+                      className={style.etcItem}
+                      required
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div>
-          <h4>어떤 건물인가요?</h4>
-          <div className={style.radioGroup}>
-            {buildingTypes.map((type) => (
-              <div key={type} className={style.radioItem}>
-                <input
-                  type="radio"
-                  id={type}
-                  name="buildingType"
-                  value={type}
-                  onChange={handleBuildingChange}
-                  required
-                />
-                <label htmlFor={type}>{type}</label>
-                {type === "기타" && buildingType === "기타" && (
-                  <input
-                    type="text"
-                    placeholder="기타 건물 유형을 입력해주세요"
-                    value={otherBuilding}
-                    onChange={(e) => setOtherBuilding(e.target.value)}
-                    className={style.etcItem}
-                    required
-                  />
-                )}
-              </div>
-            ))}
+          <div>
+            <h4>청소 희망일을 선택해주세요</h4>
+            <input type="date" required />
           </div>
-        </div>
-
-        <div>
-          <h4>청소 희망일을 선택해주세요</h4>
-          <input type="date" required />
         </div>
 
         <button type="submit">제출</button>

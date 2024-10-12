@@ -63,8 +63,8 @@
 }
 
 .contactPlaceholder button:hover {
-  background-color: red;
-  border-color: red;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
   color: white;
   transform: scale(1.1);
 }

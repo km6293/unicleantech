@@ -10,7 +10,7 @@
 .inquiryContainer form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 7rem;
   margin: 0 25%;
   width: calc(100% - 50%);
 }
@@ -24,6 +24,12 @@
 }
 
 .inquiryContainer > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inquiryContainer > form > div > div {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -178,7 +184,22 @@
 }
 
 .inquiryContainer button {
+  width: 100%;
+  border-radius: 80px;
+  padding: 2rem 5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
   text-align: center;
+}
+
+.inquiryContainer button:hover {
+  background-color: var(--color-link-hover);
+  border-color: var(--color-link-hover);
 }
 
 @media screen and (max-width: 768px) {

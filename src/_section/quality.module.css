@@ -70,18 +70,20 @@
 .content button {
   border-radius: 80px;
   padding: 2rem 5rem;
-  background-color: #ffffff00;
+  background-color: #ffffff29;
   width: fit-content;
   font-weight: 700;
   color: var(--color-border);
   font-size: 2rem;
   border: 2px solid var(--color-border);
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 }
 
 .content button:hover {
-  background-color: white;
-  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
 }
 
 @media screen and (max-width: 1024px) {
