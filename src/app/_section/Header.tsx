@@ -22,7 +22,6 @@ export default function Header() {
   const menuItems = [
     { label: "이건 뭐야?", url: "/about" },
     { label: "서비스 소개", url: "/service" },
-    { label: "채용", url: "/career" },
     { label: "문의하기", url: "/contact" },
   ];
 

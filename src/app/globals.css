@@ -117,6 +117,11 @@ h3 {
   line-height: 2;
 }
 
+h4 {
+  font-size: var(--font-size-large);
+  line-height: 2;
+}
+
 p {
   font-size: var(--font-size-large);
 }
@@ -138,6 +143,10 @@ strong {
     font-size: var(--font-size-large);
   }
 
+  h4 {
+    font-size: var(--font-size-base);
+  }
+
   p {
     font-size: var(--font-size-base);
   }
@@ -151,7 +160,8 @@ strong {
     font-size: var(--font-size-base);
   }
 
-  h3 {
+  h3,
+  h4 {
     font-size: var(--font-size-small);
   }
 
