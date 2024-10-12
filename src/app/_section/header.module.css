@@ -23,7 +23,7 @@
 
 .header a {
   color: inherit;
-  padding: 0 3.5rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +70,10 @@
 
 .mobileBackground a {
   color: black;
+}
+
+.header nav a {
+  padding: 0 3.5rem;
 }
 
 @media screen and (max-width: 1024px) {

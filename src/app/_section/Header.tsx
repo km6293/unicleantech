@@ -4,20 +4,31 @@ import { useEffect, useState } from "react";
 import style from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleScroll = () => setIsScrolled(window.scrollY > 20);
+  const handleScroll = () => {
+    const isAlwaysScrolled = pathname === "/service" || pathname === "/contact";
+
+    if (isAlwaysScrolled || isMenuOpen || window.scrollY > 20) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname, isMenuOpen]);
 
   const menuItems = [
     { label: "이건 뭐야?", url: "/about" },
