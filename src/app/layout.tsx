@@ -65,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="ko" dir="ltr">
       <head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="description" content="유니클린텍은 청소전문 업체입니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script
