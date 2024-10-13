@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "유니클린텍",
   description: `유니클린텍은 청소전문 업체입니다.`,
   icons: {
-    icon: "/simbal.svg",
+    icon: "/Simbal.svg",
   },
   generator: "Next.js",
   applicationName: "유니클린텍",
@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "유니클린텍 - 홈",
     description: `유니클린텍은 청소전문 업체입니다.`,
-    url: `https://unicleantech.vercel.app/`,
+    url: `https://www.unicleantech.co.kr/`,
     siteName: "유니클린텍",
     images: [
       {
-        url: "/simbal.svg",
+        url: "/Simbal.svg",
         width: 800,
         height: 600,
         alt: "유니클린텍 로고",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "유니클린텍 - 홈",
     description: `유니클린텍은 청소전문 업체입니다.`,
-    images: ["/simbal.svg"],
+    images: ["/Simbal.svg"],
   },
 };
 
