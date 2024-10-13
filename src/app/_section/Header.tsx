@@ -21,6 +21,9 @@ export default function Header() {
     }
   };
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -73,7 +76,11 @@ export default function Header() {
       >
         <ul>
           {menuItems.map((item) => (
-            <Link key={item.label} href={item.url}>
+            <Link
+              key={item.label}
+              href={item.url}
+              onClick={handleMenuItemClick}
+            >
               <li>{item.label}</li>
             </Link>
           ))}
