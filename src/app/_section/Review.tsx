@@ -29,10 +29,10 @@ export default function Review() {
           <div key={index}>
             <Image
               alt="image"
-              layout="responsive"
               src={item}
               width={300}
               height={500}
+              style={{ width: "100%", height: "auto" }}
             />
           </div>
         ))}

@@ -14,10 +14,10 @@ export default function Youtube() {
           <div key={number}>
             <Image
               alt="image"
-              layout="responsive"
               src="/group.jpg"
               width={1160}
               height={900}
+              style={{ width: "100%", height: "auto" }}
             />
             <p>1줄 설명</p>
           </div>

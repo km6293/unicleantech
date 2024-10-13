@@ -61,10 +61,10 @@ export default function Range() {
           <article key={index}>
             <Image
               alt="image"
-              layout="responsive"
               src="/group.jpg"
               width={1160}
               height={900}
+              style={{ width: "100%", height: "auto" }}
             />
             <div>
               <h2>{item.title}</h2>

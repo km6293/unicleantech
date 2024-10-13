@@ -25,11 +25,11 @@ export default function Introduce() {
         {[1, 2, 3, 4].map((number) => (
           <div key={number}>
             <Image
-              alt="image"
-              layout="responsive"
+              alt="청소 이미지"
               src="/group.jpg"
               width={1160}
               height={900}
+              style={{ width: "100%", height: "auto" }}
             />
             <p>직원</p>
           </div>
