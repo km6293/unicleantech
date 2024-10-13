@@ -5,6 +5,7 @@ import "./globals.css";
 import { Contact, Footer, Header } from "./_section";
 import { Suspense } from "react";
 import ChannelTalk from "@/components/ChannelTalk";
+import Head from "next/head";
 
 const pretendard = localFont({
   src: "../fonts/PretendardVariable.woff2",
@@ -18,13 +19,11 @@ export const metadata: Metadata = {
     process.env.METADATA_BASE || "https://www.unicleantech.co.kr"
   ),
   title: "유니클린텍",
-  description: `유니클린텍은 청소전문 업체입니다.`,
+  description: "유니클린텍은 청소전문 업체입니다.",
   icons: {
     icon: [
-      {
-        url: "https://www.unicleantech.co.kr/logo.png",
-        type: "image/png",
-      },
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "https://www.unicleantech.co.kr/logo.png", type: "image/png" },
       {
         url: "https://www.unicleantech.co.kr/Simbal.svg",
         type: "image/svg+xml",
@@ -36,15 +35,11 @@ export const metadata: Metadata = {
   keywords: ["청소전문", "입주청소", "프리미엄 청소"],
   creator: "김민수",
   authors: [{ name: "김민수", url: "https://github.com/km6293" }],
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
     title: "유니클린텍 - 홈",
-    description: `유니클린텍은 청소전문 업체입니다.`,
-    url: `https://www.unicleantech.co.kr/`,
+    description: "유니클린텍은 청소전문 업체입니다.",
+    url: "https://www.unicleantech.co.kr/",
     siteName: "유니클린텍",
     images: [
       {
@@ -60,8 +55,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "유니클린텍 - 홈",
-    description: `유니클린텍은 청소전문 업체입니다.`,
-    images: ["https://www.unicleantech.co.kr/logo_1200x600.png"],
+    description: "유니클린텍은 청소전문 업체입니다.",
+    images: ["https://www.unicleantech.co.kr/logo.png"],
   },
 };
 
@@ -70,10 +65,47 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko" dir="ltr">
-      <head>
+      <Head>
         <meta charSet="UTF-8" />
-        <meta name="description" content="유니클린텍은 청소전문 업체입니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="유니클린텍은 청소전문 업체입니다." />
+        <meta name="keywords" content="청소전문, 입주청소, 프리미엄 청소" />
+        <meta name="author" content="김민수" />
+
+        {/* Favicon 설정 */}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="유니클린텍 - 홈" />
+        <meta
+          property="og:description"
+          content="유니클린텍은 청소전문 업체입니다."
+        />
+        <meta property="og:url" content="https://www.unicleantech.co.kr/" />
+        <meta property="og:site_name" content="유니클린텍" />
+        <meta
+          property="og:image"
+          content="https://www.unicleantech.co.kr/logo.png"
+        />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="유니클린텍 - 홈" />
+        <meta
+          name="twitter:description"
+          content="유니클린텍은 청소전문 업체입니다."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.unicleantech.co.kr/logo.png"
+        />
 
         {/* Organization Schema */}
         <script
@@ -143,7 +175,7 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
+      </Head>
       {process.env.NEXT_PUBLIC_GTM_ID && (
         <Suspense>{/* <Analytics /> */}</Suspense>
       )}
