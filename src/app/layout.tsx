@@ -68,6 +68,8 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="description" content="유니클린텍은 청소전문 업체입니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -86,6 +88,39 @@ export default function RootLayout({
             }),
           }}
         />
+
+        {/* BreadcrumbList Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "홈",
+                  item: "https://www.unicleantech.co.kr",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "서비스",
+                  item: "https://www.unicleantech.co.kr/service",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "문의하기",
+                  item: "https://www.unicleantech.co.kr/contact",
+                },
+              ],
+            }),
+          }}
+        />
+
+        {/* WebSite Schema with SearchAction */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
