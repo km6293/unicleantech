@@ -4,7 +4,6 @@ import "./reset.css";
 import "./globals.css";
 import { Contact, Footer, Header } from "./_section";
 import { Suspense } from "react";
-// import Analytics from "./_component/analytics";
 import ChannelTalk from "@/components/ChannelTalk";
 
 const pretendard = localFont({
@@ -15,11 +14,16 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.METADATA_BASE!),
+  metadataBase: new URL(
+    process.env.METADATA_BASE || "https://www.unicleantech.co.kr"
+  ),
   title: "유니클린텍",
   description: `유니클린텍은 청소전문 업체입니다.`,
   icons: {
-    icon: "/Simbal.svg",
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/Simbal.svg", type: "image/svg+xml" },
+    ],
   },
   generator: "Next.js",
   applicationName: "유니클린텍",
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "유니클린텍",
     images: [
       {
-        url: "/Simbal.svg",
+        url: "/logo.png",
         width: 800,
         height: 600,
         alt: "유니클린텍 로고",
@@ -51,17 +55,54 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "유니클린텍 - 홈",
     description: `유니클린텍은 청소전문 업체입니다.`,
-    images: ["/Simbal.svg"],
+    images: ["https://www.unicleantech.co.kr/logo_1200x600.png"],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" dir="ltr">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="유니클린텍은 청소전문 업체입니다." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "유니클린텍",
+              url: "https://www.unicleantech.co.kr",
+              logo: "https://www.unicleantech.co.kr/logo.png",
+              sameAs: [
+                "https://www.instagram.com/clean_young_people",
+                "https://youtube.com/channel/UCfA5jx1Ak5sHsZPatOWd3xg?si=RDLooUhrtUDQ0dH3",
+                "https://www.tiktok.com/@unicleantech",
+                "https://blog.naver.com/unicleantech",
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              url: "https://www.unicleantech.co.kr",
+              potentialAction: {
+                "@type": "SearchAction",
+                target:
+                  "https://www.unicleantech.co.kr/search?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+      </head>
       {process.env.NEXT_PUBLIC_GTM_ID && (
         <Suspense>{/* <Analytics /> */}</Suspense>
       )}
