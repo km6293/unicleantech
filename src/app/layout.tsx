@@ -21,8 +21,14 @@ export const metadata: Metadata = {
   description: `유니클린텍은 청소전문 업체입니다.`,
   icons: {
     icon: [
-      { url: "/logo.png", type: "image/png" },
-      { url: "/Simbal.svg", type: "image/svg+xml" },
+      {
+        url: "https://www.unicleantech.co.kr/logo.png",
+        type: "image/png",
+      },
+      {
+        url: "https://www.unicleantech.co.kr/Simbal.svg",
+        type: "image/svg+xml",
+      },
     ],
   },
   generator: "Next.js",
@@ -42,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "유니클린텍",
     images: [
       {
-        url: "/logo.png",
+        url: "https://www.unicleantech.co.kr/logo.png",
         width: 800,
         height: 600,
         alt: "유니클린텍 로고",
