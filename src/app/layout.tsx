@@ -4,7 +4,7 @@ import "./reset.css";
 import "./globals.css";
 import { Contact, Footer, Header } from "./_section";
 import { Suspense } from "react";
-import Analytics from "./_component/analytics";
+// import Analytics from "./_component/analytics";
 import ChannelTalk from "@/components/ChannelTalk";
 
 const pretendard = localFont({
@@ -63,9 +63,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       {process.env.NEXT_PUBLIC_GTM_ID && (
-        <Suspense>
-          <Analytics />
-        </Suspense>
+        <Suspense>{/* <Analytics /> */}</Suspense>
       )}
       <body className={`${pretendard.variable}`}>
         <Header />
