@@ -15,11 +15,10 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.METADATA_BASE || "https://www.unicleantech.co.kr"
-  ),
+  metadataBase: new URL("https://www.unicleantech.co.kr"),
   title: "유니클린텍",
   description: "유니클린텍은 청소전문 업체입니다.",
+  keywords: ["청소전문", "입주청소", "프리미엄 청소"],
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
@@ -32,7 +31,6 @@ export const metadata: Metadata = {
   },
   generator: "Next.js",
   applicationName: "유니클린텍",
-  keywords: ["청소전문", "입주청소", "프리미엄 청소"],
   creator: "김민수",
   authors: [{ name: "김민수", url: "https://github.com/km6293" }],
   formatDetection: { email: false, address: false, telephone: false },
@@ -68,46 +66,18 @@ export default function RootLayout({
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="유니클린텍은 청소전문 업체입니다." />
-        <meta name="keywords" content="청소전문, 입주청소, 프리미엄 청소" />
-        <meta name="author" content="김민수" />
+        <link rel="canonical" href="https://www.unicleantech.co.kr/" />
 
-        {/* Favicon 설정 */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        {/* Preload 폰트 */}
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
+          rel="preload"
+          href="/fonts/PretendardVariable.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="유니클린텍 - 홈" />
-        <meta
-          property="og:description"
-          content="유니클린텍은 청소전문 업체입니다."
-        />
-        <meta property="og:url" content="https://www.unicleantech.co.kr/" />
-        <meta property="og:site_name" content="유니클린텍" />
-        <meta
-          property="og:image"
-          content="https://www.unicleantech.co.kr/logo.png"
-        />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
-
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="유니클린텍 - 홈" />
-        <meta
-          name="twitter:description"
-          content="유니클린텍은 청소전문 업체입니다."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.unicleantech.co.kr/logo.png"
-        />
-
-        {/* Organization Schema */}
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -126,7 +96,6 @@ export default function RootLayout({
             }),
           }}
         />
-
         {/* BreadcrumbList Schema */}
         <script
           type="application/ld+json"
@@ -154,24 +123,6 @@ export default function RootLayout({
                   item: "https://www.unicleantech.co.kr/contact",
                 },
               ],
-            }),
-          }}
-        />
-
-        {/* WebSite Schema with SearchAction */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              url: "https://www.unicleantech.co.kr",
-              potentialAction: {
-                "@type": "SearchAction",
-                target:
-                  "https://www.unicleantech.co.kr/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
             }),
           }}
         />
