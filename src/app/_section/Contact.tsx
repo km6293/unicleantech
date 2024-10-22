@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Video } from "../_component";
 import style from "./contact.module.css";
 
@@ -11,8 +12,8 @@ export default function Contact() {
           도와드리겠습니다.
         </p>
         <div>
-          <button>견적 의뢰하기</button>
-          <button>가맹 문의하기</button>
+          <Link href="/contact">견적 의뢰하기</Link>
+          <Link href="/">가맹 문의하기</Link>
         </div>
       </div>
       <div className={style.contactContainer}>

@@ -47,7 +47,7 @@
   width: 100%;
   justify-content: center;
 }
-.contactPlaceholder button {
+.contactPlaceholder a {
   border-radius: 20px;
   border: 1px solid white;
   background-color: #ffffff29;
@@ -62,7 +62,7 @@
   padding: 0 10%;
 }
 
-.contactPlaceholder button:hover {
+.contactPlaceholder a:hover {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: white;

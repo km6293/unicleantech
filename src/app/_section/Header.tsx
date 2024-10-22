@@ -48,7 +48,9 @@ export default function Header() {
       >
         <Link href="/">
           <Image
-            src={`${isScrolled ? "/logo-black.svg" : "/logo-white.svg"}`}
+            src={`${
+              isScrolled ? "/svg/logo-black.svg" : "/svg/logo-white.svg"
+            }`}
             alt="logo"
             className={style.logo}
             width={150}
@@ -62,7 +64,7 @@ export default function Header() {
             </Link>
           ))}
           <Image
-            src="/menu.svg"
+            src="/svg/menu.svg"
             alt="menu"
             className={style.menu}
             width={30}

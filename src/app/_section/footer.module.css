@@ -19,3 +19,30 @@
   line-height: var(--line-height-base);
   font-size: var(--font-size-base);
 }
+
+.footer section {
+  display: flex;
+}
+
+.footer div {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+@media screen and (max-width: 480px) {
+  .footer section {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .footer div {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: start;
+  }
+}

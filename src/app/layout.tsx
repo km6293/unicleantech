@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       { url: "/favicon.ico", type: "image/x-icon" },
       { url: "https://www.unicleantech.co.kr/logo.png", type: "image/png" },
       {
-        url: "https://www.unicleantech.co.kr/Simbal.svg",
+        url: "https://www.unicleantech.co.kr/svg/Simbal.svg",
         type: "image/svg+xml",
       },
     ],
