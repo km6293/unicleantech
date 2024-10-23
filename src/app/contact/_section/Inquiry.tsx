@@ -113,7 +113,7 @@ export default function Inquiry() {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",
-          "api-key": process.env.NEXT_PUBLIC_BREVO_API_KEY || "",
+          "api-key": process.env.BREVO_API_KEY || "",
         }),
         body: JSON.stringify(emailData),
       });
