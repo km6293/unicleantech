@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "./inquiry.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Inquiry() {
   interface CheckboxOption {
@@ -46,10 +47,21 @@ export default function Inquiry() {
     "기타",
   ];
 
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [region, setRegion] = useState("");
+  const [structure, setStructure] = useState("");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [otherService, setOtherService] = useState<string>("");
   const [buildingType, setBuildingType] = useState<string>("");
   const [otherBuilding, setOtherBuilding] = useState<string>("");
+  const [todayDate, setTodayDate] = useState<string>("");
+
+  useEffect(() => {
+    const today = new Date();
+    const formattedDate = today.toISOString().split("T")[0];
+    setTodayDate(formattedDate);
+  }, []);
 
   const handleBuildingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBuildingType(e.target.value);
@@ -69,20 +81,54 @@ export default function Inquiry() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const selected = selectedServices.includes("기타")
       ? [...selectedServices, `기타: ${otherService}`]
       : selectedServices;
 
-    console.log(`선택된 서비스: ${selected.join(", ")}`);
-    console.log(
-      `선택된 건물 유형: ${buildingType}${
+    const emailData = {
+      subject: "문의 요청 드립니다.",
+      sender: { email: process.env.NEXT_PUBLIC_FROM_USER_EMAIL },
+      to: [{ email: process.env.NEXT_PUBLIC_TO_USER_EMAIL }],
+      htmlContent: `
+          <h1>청소 문의 정보</h1>
+          <p><strong>이름:</strong> ${name}</p>
+          <p><strong>연락처:</strong> ${phone}</p>
+          <p><strong>청소 지역:</strong> ${region}</p>
+          <p><strong>평수, 방, 화장실, 베란다 구조:</strong> ${structure}</p>
+          <p><strong>선택된 서비스:</strong> ${selected.join(", ")}</p>
+          <p><strong>선택된 건물 유형:</strong> ${buildingType}${
         buildingType === "기타" ? ` - ${otherBuilding}` : ""
-      }`
-    );
+      }</p>
+          <p><strong>청소 희망일:</strong> ${todayDate}</p>
+        `,
+    };
 
-    alert("폼이 제출되었습니다!");
+    try {
+      const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: new Headers({
+          "Content-Type": "application/json",
+          "api-key": process.env.NEXT_PUBLIC_BREVO_API_KEY || "",
+        }),
+        body: JSON.stringify(emailData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert("폼이 제출되었습니다! 이메일이 발송되었습니다.");
+        router.push("/");
+      } else {
+        const errorData = await response.json();
+        alert("이메일 발송에 실패했습니다.");
+      }
+    } catch (error) {
+      alert("서버 오류로 인해 이메일 발송에 실패했습니다.");
+    }
   };
 
   return (
@@ -94,22 +140,47 @@ export default function Inquiry() {
         <div>
           <div>
             <h4>이름을 입력해주세요</h4>
-            <input type="text" required />
+            <input
+              type="text"
+              value={name}
+              placeholder="김현수"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </div>
 
           <div>
             <h4>연락처를 입력해주세요</h4>
-            <input type="text" required maxLength={15} />
+            <input
+              type="text"
+              value={phone}
+              placeholder="010-xxxx-xxxx"
+              onChange={(e) => setPhone(e.target.value)}
+              required
+              maxLength={15}
+            />
           </div>
 
           <div>
             <h4>청소 지역 입력 (시/도, 구/군, 동)</h4>
-            <input type="text" required />
+            <input
+              type="text"
+              value={region}
+              placeholder="서울특별시 강서구 화곡동 xxx-xx , 000호"
+              onChange={(e) => setRegion(e.target.value)}
+              required
+            />
           </div>
 
           <div>
             <h4>평수, 방, 화장실, 베란다 구조는 어떻게 되실까요?</h4>
-            <input type="text" required />
+            <input
+              type="text"
+              value={structure}
+              placeholder="25평 , 방3 ,화2 , 베란다2 (공급면적 기준으로 말씀해주셔야 합니다)"
+              onChange={(e) => setStructure(e.target.value)}
+              required
+            />
           </div>
 
           <div>
@@ -171,7 +242,13 @@ export default function Inquiry() {
 
           <div>
             <h4>청소 희망일을 선택해주세요</h4>
-            <input type="date" required />
+            <input
+              type="date"
+              value={todayDate}
+              min={todayDate}
+              onChange={(e) => setTodayDate(e.target.value)}
+              required
+            />
           </div>
         </div>
 
