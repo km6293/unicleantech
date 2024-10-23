@@ -119,14 +119,12 @@ export default function Inquiry() {
       });
 
       if (response.ok) {
-        const data = await response.json();
         alert("폼이 제출되었습니다! 이메일이 발송되었습니다.");
         router.push("/");
       } else {
-        const errorData = await response.json();
         alert("이메일 발송에 실패했습니다.");
       }
-    } catch (error) {
+    } catch {
       alert("서버 오류로 인해 이메일 발송에 실패했습니다.");
     }
   };
