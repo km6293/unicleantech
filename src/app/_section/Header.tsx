@@ -5,6 +5,7 @@ import style from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import MenuIcon from "@/../public/svg/menu.svg";
 
 export default function Header() {
   const pathname = usePathname();
@@ -63,14 +64,23 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Image
+          <MenuIcon
+            alt="menu"
+            className={style.menu}
+            fill={isScrolled ? "black" : "white"}
+            width={30}
+            height={30}
+            onClick={toggleMenu}
+          />
+
+          {/* <Image
             src="/svg/menu.svg"
             alt="menu"
             className={style.menu}
             width={30}
             height={30}
             onClick={toggleMenu}
-          />
+          /> */}
         </nav>
       </div>
       <div

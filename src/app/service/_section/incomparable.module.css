@@ -1,7 +1,9 @@
 .IncomparableContainer {
   position: relative;
   height: 100%;
-  padding: 10rem 10%;
+  padding: 0 10%;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,4 +25,18 @@
 .IncomparableContainer a:hover {
   color: #ffffff;
   background-color: var(--color-primary);
+}
+
+@media screen and (max-width: 1024px) {
+  .prideContainer {
+    padding: 0 5%;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .IncomparableContainer a {
+    padding: 1.5rem 5rem;
+  }
 }
