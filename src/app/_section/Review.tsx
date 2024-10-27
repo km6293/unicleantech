@@ -32,7 +32,7 @@ export default function Review() {
               src={item}
               width={300}
               height={500}
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: "100%", height: "300px" }}
             />
           </div>
         ))}
