@@ -175,7 +175,7 @@ export default function Inquiry() {
             <input
               type="text"
               value={structure}
-              placeholder="25평 , 방3 ,화2 , 베란다2 (공급면적 기준으로 말씀해주셔야 합니다)"
+              placeholder="25평 , 방3 ,화2 , 베란다2 (공급면적 기준)"
               onChange={(e) => setStructure(e.target.value)}
               required
             />
