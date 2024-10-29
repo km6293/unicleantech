@@ -10,7 +10,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: true,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -20,7 +20,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: false,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -30,7 +30,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: true,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -40,7 +40,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: false,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -50,7 +50,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: true,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -60,7 +60,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: false,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -70,7 +70,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: true,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -80,7 +80,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: false,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
     {
       title: "The highest quality",
@@ -90,7 +90,7 @@ export default function QualityExport() {
       buttonText: "실제 가격을 확인해 보세요!",
       first: true,
       type: "video",
-      src: "https://km1873045158.github.io/unicleantech-v/v/video.mp4",
+      src: process.env.NEXT_PUBLIC_VIDEO_SRC || "",
     },
   ];
 
