@@ -6,7 +6,7 @@ export default function page() {
     <>
       <div className={style.videoPlaceholder}></div>
       <section className={style.videoContainer}>
-        <Video isTop={true} src={"/video"} />
+        <Video isTop={true} src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
 
         <article className={style.videoDetail}>
           <h3>&ldquo;유니클린텍은 청소업체들을 굉장히 싫어합니다.&ldquo;</h3>
