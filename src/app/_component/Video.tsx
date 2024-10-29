@@ -1,21 +1,55 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./video.module.css";
 
 type IVideoProps = {
   src: string;
+  isTop?: boolean;
   fallbackText?: string;
 };
 
-export default function Video({ src, fallbackText }: IVideoProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+export default function Video({
+  src,
+  isTop = false,
+  fallbackText,
+}: IVideoProps) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
+    const videoElement = videoRef.current;
+
+    const handlePlayPause = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (videoElement) {
+          if (entry.isIntersecting) {
+            if (!hasPlayed) {
+              videoElement.play();
+              setHasPlayed(true);
+            }
+          } else {
+            videoElement.pause();
+            setHasPlayed(false);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handlePlayPause, {
+      rootMargin: "5%",
+    });
+
+    if (videoElement) {
+      observer.observe(videoElement);
     }
-  }, []);
+
+    return () => {
+      if (videoElement) {
+        observer.unobserve(videoElement);
+      }
+    };
+  }, [hasPlayed, src]);
 
   return (
     <video
@@ -23,7 +57,7 @@ export default function Video({ src, fallbackText }: IVideoProps) {
       className={style.video}
       muted
       loop
-      preload="auto"
+      preload={isTop ? "auto" : "metadata"}
       playsInline
     >
       <source src={`${src}.webm`} type="video/webm" />
