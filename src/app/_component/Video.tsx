@@ -1,29 +1,29 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import style from "./video.module.css";
 
 type IVideoProps = {
   src: string;
-  isTop?: boolean;
   fallbackText?: string;
 };
 
-export default function Video({
-  src,
-  isTop = false,
-  fallbackText,
-}: IVideoProps) {
+export default function Video({ src, fallbackText }: IVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
 
   return (
     <video
       ref={videoRef}
       className={style.video}
-      autoPlay
       muted
       loop
-      preload={isTop ? "auto" : "metadata"}
+      preload="auto"
       playsInline
     >
       <source src={`${src}.webm`} type="video/webm" />
