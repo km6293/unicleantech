@@ -35,6 +35,22 @@
   width: 15rem;
 }
 
+.logoContainer:not(.logoScrolled) .logo:first-child {
+  display: none;
+}
+
+.logoContainer:not(.logoScrolled) .logo:last-child {
+  display: block;
+}
+
+.logoContainer.logoScrolled .logo:first-child {
+  display: block;
+}
+
+.logoContainer.logoScrolled .logo:last-child {
+  display: none;
+}
+
 .menu {
   display: none;
 }
@@ -104,7 +120,7 @@
   }
 
   .logo {
-    height: 10rem;
+    height: 7rem;
     width: 10rem;
   }
 }

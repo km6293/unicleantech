@@ -47,11 +47,21 @@ export default function Header() {
           isMenuOpen ? style.open : ""
         } `}
       >
-        <Link href="/">
+        <Link
+          href="/"
+          className={`${style.logoContainer} ${
+            isScrolled ? style.logoScrolled : ""
+          }`}
+        >
           <Image
-            src={`${
-              isScrolled ? "/svg/logo-black.svg" : "/svg/logo-white.svg"
-            }`}
+            src="/svg/logo-black.svg"
+            alt="logo"
+            className={style.logo}
+            width={150}
+            height={100}
+          />
+          <Image
+            src="/svg/logo-white.svg"
             alt="logo"
             className={style.logo}
             width={150}
