@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import style from "./video.module.css";
+import style from "./videoPlayer.module.css";
+// import Video from "next-videos";
 
 type IVideoProps = {
   src: string;
@@ -9,7 +10,7 @@ type IVideoProps = {
   fallbackText?: string;
 };
 
-export default function Video({
+export default function VideoPlayer({
   src,
   isTop = false,
   fallbackText,
@@ -54,7 +55,7 @@ export default function Video({
   return (
     <video
       ref={videoRef}
-      className={style.video}
+      className={style.videoContent}
       muted
       loop
       preload={isTop ? "auto" : "metadata"}

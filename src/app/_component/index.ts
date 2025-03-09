@@ -1,4 +1,4 @@
-import Video from "./Video";
+import VideoPlayer from "./VideoPlayer";
 import Carousel from "./Carousel";
 
-export { Video, Carousel };
+export { VideoPlayer, Carousel };

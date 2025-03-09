@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Video } from "../_component";
+import { VideoPlayer } from "../_component";
 import style from "./contact.module.css";
 
 export default function Contact() {
@@ -17,7 +17,7 @@ export default function Contact() {
         </div>
       </div>
       <div className={style.contactContainer}>
-        <Video src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
+        <VideoPlayer src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
       </div>
     </section>
   );

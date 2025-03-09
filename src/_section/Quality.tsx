@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Video } from "@/app/_component";
+import { VideoPlayer } from "@/app/_component";
 import style from "./quality.module.css";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/isMobile";
@@ -59,7 +59,7 @@ function VideoItem({ item }: { item: DataProps }) {
         <div
           className={`${style.videoWrapper} ${isVisible ? style.visible : ""}`}
         >
-          <Video src={item.src} />
+          <VideoPlayer src={item.src} />
         </div>
       )}
       {(isMobile || item.first) && item.type === "image" && (
@@ -78,7 +78,7 @@ function VideoItem({ item }: { item: DataProps }) {
         <div
           className={`${style.videoWrapper} ${isVisible ? style.visible : ""}`}
         >
-          <Video src={item.src} />
+          <VideoPlayer src={item.src} />
         </div>
       )}
       {!isMobile && !item.first && item.type === "image" && (

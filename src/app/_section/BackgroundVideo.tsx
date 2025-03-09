@@ -1,4 +1,4 @@
-import { Video } from "../_component";
+import { VideoPlayer } from "../_component";
 import style from "./backgroundVideo.module.css";
 
 export default function page() {
@@ -15,7 +15,7 @@ export default function page() {
           <h1>정확히 3분이면 확인 가능 합니다.</h1>
         </span>
       </article>
-      <Video isTop={true} src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
+      <VideoPlayer isTop={true} src={`${process.env.NEXT_PUBLIC_VIDEO_SRC}`} />
     </section>
   );
 }
