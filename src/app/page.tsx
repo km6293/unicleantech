@@ -1,22 +1,22 @@
 import style from "./page.module.css";
 import {
-  BackgroundVideo,
-  GroupPhoto,
+  // BackgroundVideo,
+  // GroupPhoto,
   Review,
   QualityExport,
-  Introduce,
-  Youtube,
+  // Introduce,
+  // Youtube,
 } from "./_section";
 
 export default function page() {
   return (
     <main className={style.mainContainer}>
-      <BackgroundVideo />
-      <GroupPhoto />
-      <Review />
-      <Introduce />
       <QualityExport />
-      <Youtube />
+      {/* <BackgroundVideo /> */}
+      {/* <GroupPhoto /> */}
+      {/* <Introduce /> */}
+      <Review />
+      {/* <Youtube /> */}
     </main>
   );
 }

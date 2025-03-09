@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import channelService from "@/utils/channelService";
+import channelService from "@/hooks/channelService";
 
 const ChannelTalk = () => {
   useEffect(() => {

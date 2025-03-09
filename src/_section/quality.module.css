@@ -11,6 +11,17 @@
   overflow: hidden;
 }
 
+.imageBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
 .contentContainer {
   position: relative;
   z-index: 1;
@@ -28,7 +39,6 @@
 }
 
 .content video {
-  width: 45%;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
@@ -64,7 +74,8 @@
 }
 
 .content p {
-  line-height: 3;
+  line-height: 2;
+  text-align: left;
 }
 
 .content button {
@@ -86,12 +97,43 @@
   border-color: var(--color-primary);
 }
 
+.videoWrapper {
+  opacity: 0;
+  transform: translateX(-130px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.videoWrapper.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.textWrapper {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.textWrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media screen and (max-width: 1024px) {
   .contentContainer {
     padding: 0 5%;
   }
+
+  .content {
+    gap: 4rem;
+  }
+
   .content button {
     font-size: 1.5rem;
+  }
+
+  .content div {
+    gap: 2.5rem;
   }
 }
 
@@ -110,12 +152,20 @@
   }
 
   .content p {
-    line-height: 2;
+    line-height: 1.5;
+  }
+
+  .content div {
+    gap: 2rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .content button {
     padding: 1rem 3rem;
+  }
+
+  .content div {
+    gap: 2rem;
   }
 }
