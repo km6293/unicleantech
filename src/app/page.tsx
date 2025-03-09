@@ -3,7 +3,7 @@ import {
   BackgroundVideo,
   GroupPhoto,
   Review,
-  QualityExport,
+  // QualityExport,
   Introduce,
   Youtube,
 } from "./_section";
