@@ -1,6 +1,6 @@
 import style from "./page.module.css";
 import {
-  BackgroundVideo,
+  // BackgroundVideo,
   GroupPhoto,
   Review,
   QualityExport,
