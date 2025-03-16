@@ -58,7 +58,7 @@ export default function VideoPlayer({
       preload={isTop ? "auto" : "metadata"}
       playsInline
     >
-      <source src={`${src}.webm`} type="video/webm" />
+      {/* <source src={`${src}.webm`} type="video/webm" /> */}
       <source src={`${src}.mp4`} type="video/mp4" />
       {fallbackText || "해당 비디오를 지원하지 않는 브라우저입니다."}
     </video>
