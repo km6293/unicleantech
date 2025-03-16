@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import style from "./videoPlayer.module.css";
 
 type IVideoProps = {
@@ -10,52 +10,53 @@ type IVideoProps = {
 
 export default function VideoPlayer({
   src,
-  isTop = false,
+  // isTop = false,
   fallbackText,
 }: IVideoProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [hasPlayed, setHasPlayed] = useState(false);
+  // const [hasPlayed, setHasPlayed] = useState(false);
 
-  useEffect(() => {
-    const videoElement = videoRef.current;
+  // useEffect(() => {
+  //   const videoElement = videoRef.current;
 
-    const handlePlayPause = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (videoElement) {
-          if (entry.isIntersecting && !hasPlayed) {
-            videoElement.play();
-            setHasPlayed(true);
-          } else if (!entry.isIntersecting && hasPlayed) {
-            videoElement.pause();
-            setHasPlayed(false);
-          }
-        }
-      });
-    };
+  //   const handlePlayPause = (entries: IntersectionObserverEntry[]) => {
+  //     entries.forEach((entry) => {
+  //       if (videoElement) {
+  //         if (entry.isIntersecting && !hasPlayed) {
+  //           videoElement.play();
+  //           setHasPlayed(true);
+  //         } else if (!entry.isIntersecting && hasPlayed) {
+  //           videoElement.pause();
+  //           setHasPlayed(false);
+  //         }
+  //       }
+  //     });
+  //   };
 
-    const observer = new IntersectionObserver(handlePlayPause, {
-      rootMargin: "0px",
-      threshold: 1.0,
-    });
+  //   const observer = new IntersectionObserver(handlePlayPause, {
+  //     rootMargin: "0px",
+  //     threshold: 1.0,
+  //   });
 
-    if (videoElement) {
-      observer.observe(videoElement);
-    }
+  //   if (videoElement) {
+  //     observer.observe(videoElement);
+  //   }
 
-    return () => {
-      if (videoElement) {
-        observer.unobserve(videoElement);
-      }
-    };
-  }, [hasPlayed, src]);
+  //   return () => {
+  //     if (videoElement) {
+  //       observer.unobserve(videoElement);
+  //     }
+  //   };
+  // }, [hasPlayed, src]);
 
   return (
     <video
+      autoPlay
       ref={videoRef}
       className={style.videoContent}
       muted
       loop
-      preload={isTop ? "auto" : "metadata"}
+      // preload={isTop ? "auto" : "metadata"}
       playsInline
     >
       {/* <source src={`${src}.webm`} type="video/webm" /> */}

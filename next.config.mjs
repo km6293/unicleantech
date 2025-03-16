@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-import withVideos from "next-videos";
 const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
@@ -14,4 +13,4 @@ const nextConfig = {
   },
 };
 
-export default withVideos(nextConfig);
+export default nextConfig;

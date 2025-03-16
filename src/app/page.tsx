@@ -11,7 +11,7 @@ import {
 export default function page() {
   return (
     <main className={style.mainContainer}>
-      <BackgroundVideo />
+      {/* <BackgroundVideo /> */}
       <QualityExport />
       <GroupPhoto />
       <Introduce />
