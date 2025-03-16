@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /apple-touch-icon.png
+Disallow: /apple-touch-icon-precomposed.png
 
 Sitemap: https://www.unicleantech.co.kr/sitemap.xml

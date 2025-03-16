@@ -3,7 +3,7 @@ import {
   BackgroundVideo,
   GroupPhoto,
   Review,
-  // QualityExport,
+  QualityExport,
   Introduce,
   Youtube,
 } from "./_section";
@@ -11,8 +11,8 @@ import {
 export default function page() {
   return (
     <main className={style.mainContainer}>
-      {/* <QualityExport /> */}
       <BackgroundVideo />
+      <QualityExport />
       <GroupPhoto />
       <Introduce />
       <Review />

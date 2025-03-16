@@ -36,6 +36,14 @@
   height: auto;
   padding: 10rem 0;
   gap: 5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .content video {
@@ -95,28 +103,6 @@
   background-color: var(--color-primary);
   color: white;
   border-color: var(--color-primary);
-}
-
-.videoWrapper {
-  opacity: 0;
-  transform: translateX(-130px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-.videoWrapper.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.textWrapper {
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-.textWrapper.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { VideoPlayer } from "@/app/_component";
 import style from "./quality.module.css";
 import Image from "next/image";
@@ -33,32 +33,41 @@ export default function Quality({ data }: QualityProps) {
 
 function VideoItem({ item }: { item: DataProps }) {
   const videoRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const isMobile = useIsMobile();
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+        });
       },
-      { threshold: 0.3 }
+      {
+        threshold: 0.1,
+      }
     );
-
     if (videoRef.current) {
       observer.observe(videoRef.current);
     }
-
-    return () => observer.disconnect();
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
   }, []);
 
   return (
-    <article className={style.content} ref={videoRef}>
+    <article
+      className={`${style.content} ${isVisible ? style.visible : ""}`}
+      ref={videoRef}
+    >
       {(isMobile || item.first) && item.type === "video" && (
-        <div
-          className={`${style.videoWrapper} ${isVisible ? style.visible : ""}`}
-        >
+        <div>
           <VideoPlayer src={item.src} />
         </div>
       )}
@@ -66,18 +75,15 @@ function VideoItem({ item }: { item: DataProps }) {
         <Image src={item.src} alt={item.title} fill />
       )}
 
-      <div className={`${style.textWrapper} ${isVisible ? style.visible : ""}`}>
+      <div>
         <h2>{item.title}</h2>
         <h3>{item.subtitle}</h3>
         <p>{item.description}</p>
         <button>{item.buttonText}</button>
       </div>
 
-      {/* 모바일이 아니고 first가 아닐 경우에만 오른쪽 배치 */}
       {!isMobile && !item.first && item.type === "video" && (
-        <div
-          className={`${style.videoWrapper} ${isVisible ? style.visible : ""}`}
-        >
+        <div>
           <VideoPlayer src={item.src} />
         </div>
       )}

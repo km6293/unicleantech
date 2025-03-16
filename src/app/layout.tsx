@@ -8,7 +8,7 @@ import ChannelTalk from "@/components/ChannelTalk";
 import Head from "next/head";
 
 const pretendard = localFont({
-  src: "../fonts/PretendardVariable.woff2",
+  src: "../fonts/NotoSansKR-VariableFont_wght.ttf",
   display: "swap",
   weight: "45 920",
   variable: "--font-pretendard",

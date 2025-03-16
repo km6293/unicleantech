@@ -1,8 +1,6 @@
 "use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import style from "./videoPlayer.module.css";
-// import Video from "next-videos";
 
 type IVideoProps = {
   src: string;
@@ -24,12 +22,10 @@ export default function VideoPlayer({
     const handlePlayPause = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (videoElement) {
-          if (entry.isIntersecting) {
-            if (!hasPlayed) {
-              videoElement.play();
-              setHasPlayed(true);
-            }
-          } else {
+          if (entry.isIntersecting && !hasPlayed) {
+            videoElement.play();
+            setHasPlayed(true);
+          } else if (!entry.isIntersecting && hasPlayed) {
             videoElement.pause();
             setHasPlayed(false);
           }
@@ -38,7 +34,8 @@ export default function VideoPlayer({
     };
 
     const observer = new IntersectionObserver(handlePlayPause, {
-      rootMargin: "5%",
+      rootMargin: "0px",
+      threshold: 1.0,
     });
 
     if (videoElement) {
